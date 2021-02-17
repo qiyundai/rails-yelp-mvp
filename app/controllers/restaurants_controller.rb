@@ -14,7 +14,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
-  def show; end
+  def show
+  end
 
   private
 

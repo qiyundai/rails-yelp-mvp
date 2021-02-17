@@ -27,8 +27,8 @@ restaurants.each do |restaurant|
     10.times do
         Review.create(
             content: Faker::Quote.yoda,
-            rating: [0..5].to_a.sample,
-            restaurant_id: restaurant.id
+            rating: (0..5).to_a.sample,
+            restaurant: restaurant
         )
     end
     puts "reviews added"
