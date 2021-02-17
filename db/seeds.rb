@@ -19,3 +19,17 @@ Restaurant.destroy_all
     )
     puts "Restaurant added"
 end
+
+restaurants = Restaurant.all
+
+restaurants.each do |restaurant|
+    puts "Adding reviews to each restaurant"
+    10.times do
+        Review.create(
+            content: Faker::Quote.yoda,
+            rating: [0..5].to_a.sample,
+            restaurant_id: restaurant.id
+        )
+    end
+    puts "reviews added"
+end
