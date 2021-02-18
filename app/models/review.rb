@@ -5,7 +5,7 @@ class Review < ApplicationRecord
         @review = Review.new
     end
 
-
+    validates :rating, numericality: { only_integer: true }
     validates_presence_of :content, :rating
     validates_inclusion_of :rating, in: (0..5).to_a
 end
