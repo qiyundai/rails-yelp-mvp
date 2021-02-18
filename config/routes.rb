@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:new, :show, :create, :index] do
     resources :reviews, only: [:new, :create]
   end
+  resources :reviews, only: [:destroy]
   root "restaurants#index"
 end
